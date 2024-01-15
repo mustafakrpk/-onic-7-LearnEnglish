@@ -1,0 +1,24 @@
+<!-- hikaye-modal.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Hikaye Detayları</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="warning">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ hikaye.baslangicHikayeAdi }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>{{ hikaye.baslangicHikaye }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

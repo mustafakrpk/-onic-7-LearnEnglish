@@ -1,0 +1,123 @@
+<ion-header class="true">
+  <ion-item lines="none">
+    <ion-button fill="clear" color="light" (click)="toggleMenu()">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+    </ion-button>
+
+    <ion-button
+      slot="end"
+      expand="full"
+      color="light"
+      (click)="goToSettings()"
+      side="end"
+    >
+      <ion-icon slot="icon-only" name="settings-outline"></ion-icon
+    ></ion-button>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-toolbar>
+      <ion-title class="center-title"> K-WORDS</ion-title>
+    </ion-toolbar>
+  </ion-item>
+</ion-header>
+
+<ion-menu contentId="main-content" side="start" type="overlay" id="main-menu">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>MENU</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list lines="none">
+      <ion-item [routerLink]="['hikayeler']">
+        <ion-icon name="book-outline" slot="start"></ion-icon>
+        <ion-label>Hikayeler</ion-label>
+      </ion-item>
+
+      <ion-item (click)="goToCategory('Diyaloglar')">
+        <ion-icon name="chatbox-outline" slot="start"></ion-icon>
+        <ion-label>Diyaloglar</ion-label>
+      </ion-item>
+
+      <ion-item (click)="goToCategory('Kelimeler')">
+        <ion-icon name="pencil-outline" slot="start"></ion-icon>
+        <ion-label>Kelimeler</ion-label>
+      </ion-item>
+
+      <ion-item (click)="goToCategory('Eklediklerim')">
+        <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+        <ion-label>Eklediklerim</ion-label>
+      </ion-item>
+
+      <ion-item (click)="goToCategory('Favorilerim')">
+        <ion-icon name="heart-outline" slot="start"></ion-icon>
+        <ion-label>Favorilerim</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content [fullscreen]="true" #content color="dark">
+  <!-- Ana Sayfa İçeriği -->
+  <div class="homepage-content">
+    <!-- Arama Kutusu -->
+    <ion-searchbar (ionInput)="search($event)"></ion-searchbar>
+
+    <!-- Çeviri Sonuçları -->
+    <ion-card *ngIf="translatedWord">
+      <ion-card-header>
+        <ion-card-title class="translated-text-title"
+          >Çeviri Sonucu</ion-card-title
+        >
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-label class="translated-text-label"
+          >{{ translatedWord }}</ion-label
+        >
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Kategoriler veya Seviyeler Menüsü -->
+    <ion-segment [(ngModel)]="selectedCategory">
+      <ion-segment-button routerLink="/hikayeler">
+        <ion-label>Hikayeler</ion-label>
+      </ion-segment-button>
+      <ion-segment-button routerLink="/tab2">
+        <ion-label>Tüm Kelimeler</ion-label></ion-segment-button
+      >
+
+      <ion-segment-button (click)="goToIlkokulSeviyesi()"
+        ><ion-label>İlkokul Seviyesi</ion-label></ion-segment-button
+      >
+    </ion-segment>
+
+    <!-- Rastgele Kelimeler -->
+    <ion-card>
+      <ion-card-content>
+        <ion-icon name="school-outline"></ion-icon>&nbsp;<b
+          >Word : {{randomKelime.ingilizceKelime}}</b
+        >
+        <p>Anlamı : {{randomKelime.turkceKarsiligi}}</p>
+        <p>Örnek Cümle: {{randomKelime.ornekCumle}}</p>
+        <p>Ders Süresi : {{randomKelime.baslamaZamani}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-button (click)="getRandomWord()" class="custom-button">
+      Yenile
+      <ion-icon name="refresh"></ion-icon>
+    </ion-button>
+
+    <!-- Önerilen Hikayeler -->
+    <ion-card>
+      <ion-card-header> Önerilen Hikayeler </ion-card-header>
+      <ion-card-content>
+        <!-- Hikaye listesi buraya eklenebilir -->
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Hızlı Erişim Düğmeleri -->
+    <!-- <ion-button expand="full" (click)="goToSettings()">Ayarlar</ion-button> -->
+  </div>
+</ion-content>

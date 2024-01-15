@@ -1,0 +1,73 @@
+/* ilkokul-seviyesi.component.scss */
+
+// Sesli Hikayeler ve İçerikler Bölümü Ortak Stiller
+.ilkokul-seviyesi-content {
+  padding: 16px;
+}
+
+// Sesli Hikayeler Bölümü Stilleri
+ion-card {
+  margin-bottom: 16px;
+
+  ion-card-header {
+   // background-color: #234145;
+    color: #ECDCDB;
+   
+  }
+ion-card-title{
+  color: #000000;
+}
+  ion-card-content {
+    ion-button {
+      margin-top: 8px;
+      background-color: #2ecc71;
+      color: #fff;
+
+      ion-icon {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+// Görsel ve İşitsel İçerikler Bölümü Stilleri
+.goz-alici-icerikler {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  ion-card {
+    width: 70%;
+    margin-bottom: 16px;
+
+    ion-card-header {
+      background-color: #757575;
+      color: #fff;
+      justify-content: space-around;
+      display: flex;
+      flex-direction: row;
+    }
+
+    ion-card-content {
+      img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin-bottom: 8px;
+      }
+
+      ion-button {
+        background-color: #f33412;
+        color: #fff;
+
+        ion-icon {
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}

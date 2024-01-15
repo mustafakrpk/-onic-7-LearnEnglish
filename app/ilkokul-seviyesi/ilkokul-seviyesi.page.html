@@ -1,0 +1,200 @@
+<ion-header [translucent]="true">
+  <ion-toolbar
+    ><ion-buttons slot="start">
+      <ion-back-button defaultHref="/ana-sayfa"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>İlk Okul Seviyesi</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" color="warning">
+  <ion-card color="warning">
+    <ion-card-header>
+      <ion-card-title>KİDS</ion-card-title>
+      <ion-card-subtitle
+        >Bu bölümde İlk okul aşamasında olan çocuklar için içerikler
+        bulunmaktadır.</ion-card-subtitle
+      >
+    </ion-card-header>
+
+    <ion-card color="medium">
+      <ion-card-header>
+        <ion-card-title>
+          <ion-card-title expand="block" (click)="setOpen(true)"
+            >İLK OKUL SEVİYESİ HİKAYELER</ion-card-title
+          >
+
+          <ion-modal [isOpen]="isModalOpen">
+            <ng-template>
+              <ion-header>
+                <ion-toolbar>
+                  <ion-title>Modal</ion-title>
+                  <ion-buttons slot="end">
+                    <ion-button (click)="setOpen(false)">Close</ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+              </ion-header>
+              <ion-content class="ion-padding" color="warning">
+                <div class="ilkokul-seviyesi-content">
+                  <!-- İlkokul Seviyesi İçeriği Buraya Eklenebilir -->
+                  <ion-card *ngFor="let hikaye of sesliHikayeler">
+                    <img alt="" [src]="hikaye.resim" />
+                    <ion-button (click)="dinle(hikaye)">
+                      Dinle
+                      <ion-icon name="volume-high"></ion-icon>
+                    </ion-button>
+                    <ion-button (click)="durdur()">
+                      Durdur
+                      <ion-icon name="stop"></ion-icon>
+                    </ion-button>
+                    <ion-card-header> {{ hikaye.baslik }} </ion-card-header>
+                    <ion-card-content>
+                      <p>{{ hikaye.icerik }}</p>
+                      <!-- <ion-button (click)="dinle(hikaye)">
+                        Dinle
+                        <ion-icon name="volume-high"></ion-icon>
+                      </ion-button>
+                      <ion-button (click)="durdur()">
+                        Durdur
+                        <ion-icon name="stop"></ion-icon>
+                      </ion-button> -->
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+              </ion-content>
+            </ng-template>
+          </ion-modal></ion-card-title
+        >
+        <ion-card-subtitle>STORIES</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content
+        >Bu bölümde çocuklar için masallar ve hikayeler
+        bulunmaktadır.</ion-card-content
+      >
+    </ion-card>
+
+    <ion-card color="primary">
+      <ion-card-header>
+        <ion-card-title expand="block" (click)="setOpen2(true)"
+          >RENKLERİ ÖĞRENELİM</ion-card-title
+        >
+        <ion-modal [isOpen]="isModalOpen2">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Modal</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button (click)="setOpen2(false)">Close</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding" color="warning">
+              <!-- Görsel ve İşitsel İçerikler Bölümü -->
+              <div class="goz-alici-icerikler">
+                <ion-card *ngFor="let icerik of gorselIcerikler">
+                  <ion-card-header> {{ icerik.baslik }} </ion-card-header>
+                  <ion-card-content>
+                    <img [src]="icerik.resimUrl" alt="{{ icerik.baslik }}" />
+                    <p>{{ icerik.aciklama }}</p>
+                    <ion-button (click)="dinleIcerik(icerik)">
+                      Dinle
+                      <ion-icon name="volume-high"></ion-icon>
+                    </ion-button>
+                    <!-- <ion-button (click)="durdur()">
+                      Durdur
+                      <ion-icon name="stop"></ion-icon>
+                    </ion-button> -->
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+        <ion-card-subtitle>COLORS</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content> Bu bölümde renkleri öğrenelim. </ion-card-content>
+    </ion-card>
+
+    <ion-card color="light">
+      <ion-card-header>
+        <ion-card-title expand="block" (click)="setOpen3(true)"
+          >RAKAMLARI ÖĞRENELİM</ion-card-title
+        ><ion-modal [isOpen]="isModalOpen3">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Modal</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button (click)="setOpen3(false)">Close</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding" color="warning">
+              <!-- Görsel ve İşitsel İçerikler Bölümü -->
+              <div class="goz-alici-icerikler">
+                <ion-card *ngFor="let icerik of rakamIcerikler">
+                  <ion-card-header> {{ icerik.baslik }} </ion-card-header>
+                  <ion-card-content>
+                    <img [src]="icerik.resimUrl" alt="{{ icerik.baslik }}" />
+                    <p>{{ icerik.aciklama }}</p>
+                    <ion-button (click)="dinleIcerik(icerik)">
+                      Dinle
+                      <ion-icon name="volume-high"></ion-icon>
+                    </ion-button>
+                    <!-- <ion-button (click)="durdur()">
+                      Durdur
+                      <ion-icon name="stop"></ion-icon>
+                    </ion-button> -->
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+        <ion-card-subtitle>NUMBERS</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content> Bu bölümde rakamları öğrenelim. </ion-card-content>
+    </ion-card>
+    <!-- //********************************************************// -->
+    <ion-card color="dark">
+      <ion-card-header>
+        <ion-card-title expand="block" (click)="setOpen4(true)"
+          >ÇİZGİ FİLMLER</ion-card-title
+        ><ion-modal [isOpen]="isModalOpen4" background-color="blue">
+          <ng-template>
+            <ion-header>
+              <ion-toolbar>
+                <ion-title>Modal</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button (click)="setOpen4(false)">Close</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            </ion-header>
+            <ion-content class="ion-padding" color="warning">
+              <div class="goz-alici-icerikler">
+                <ion-card *ngFor="let icerik of cizgiFilmler">
+                  <ion-card-header> {{ icerik.baslik }} </ion-card-header>
+                  <ion-card-content>
+                    <video width="100%" height="100%" controls>
+                      <source [src]="icerik.videoUrl" type="video/mp4" />
+                      <p>{{icerik.resimUrl}}</p>
+                    </video>
+                  </ion-card-content>
+                </ion-card>
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+        <ion-card-subtitle>CARTOONS</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Bu bölümde çizgi film izleyerek gündelik hayatta kullanılan cümleleri
+        öğrenelim.
+      </ion-card-content>
+    </ion-card>
+  </ion-card>
+</ion-content>

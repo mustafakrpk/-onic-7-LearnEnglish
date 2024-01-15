@@ -1,0 +1,136 @@
+
+ion-menu {
+  --background: #f2f2f2; /* Menü arkaplan rengi */
+}
+
+ion-header {
+  ion-toolbar {
+    --background: #d66523; /* Başlık arkaplan rengi */
+    --color: #f2f2f2; /* Başlık metin rengi */
+  }
+
+  ion-title {
+    font-size: 1.5em; /* Başlık font büyüklüğü */
+    
+  }
+}
+
+ion-list {
+  ion-item {
+    --background: #f2f2f2; /* Öğe arkaplan rengi */
+    --color: #2b2b2b; /* Öğe metin rengi */
+
+    ion-icon {
+      --color: #8c03e7; /* Simge rengi */
+    }
+
+    ion-label {
+      font-size: 1.2em; /* Öğe metin font büyüklüğü */
+    }
+  }
+
+  ion-item[selected] {
+    --background: #ccc; /* Seçili öğe arkaplan rengi */
+  }
+}
+
+
+
+
+ion-item {
+  --background: #234145;
+  h2 {
+    font-weight: bold;
+    font-size: 20px;
+   
+  }
+}
+ion-item:last-of-type {
+  div {
+    padding-bottom: 20px;
+  }
+  border-radius: 0 0 20% 20%;
+}
+
+
+ion-header {
+  ion-toolbar {
+    --background: #234145;
+    --color: #000000;
+  }
+  .center-title {
+    width: 100%;
+    text-align: center;
+
+  }
+}
+
+ion-content {
+  .homepage-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #ECDCDB;
+  margin-top: 25px;
+    h1 {
+      font-size: 24px;
+      margin: 10px 0;
+      color: #333;
+
+    }
+
+    ion-searchbar {
+      margin: 10px 0;
+      --background: #575757;
+      --color: #fffdfd;
+      --border-color: #ccc;
+      --placeholder-color: #777;
+    }
+    ion-card.translated-card {
+      margin: 20px 0;
+      background-color: #0cce1c;
+      color: #333;
+      border-radius: 12px;
+    }
+    ion-segment {
+      margin: 10px 0;
+    }
+
+    ion-card {
+      margin: 10px 0;
+      background-color: #F2EBEC;
+
+      ion-card-header {
+        --background: #575757;
+        padding: 3PX;
+        --color: #fff;
+      }
+
+      p {
+        margin: 5px;
+        color: #4d4661;
+      }
+    }
+
+ion-segment-button {
+  text-transform: capitalize;
+  transform: scale(.8,.8);
+  --indicator-color: transparent;
+  color: #234145;
+
+  ion-label {
+    position: relative;
+    left: -17px;
+    font-weight: bolder;
+    font-size: medium;
+    
+  }
+}
+    ion-button {
+      margin: 10px 0px;
+      padding-top: 1px;
+     color: #ECDCDB;
+  
+    }
+
+  }
+}

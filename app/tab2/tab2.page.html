@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title> Kelimeler</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <swiper-container [loop]="true" [pagination]="true">
+    <swiper-slide *ngFor="let ders of dersler">
+      <ion-card>
+        <ion-card-content>
+          <ion-buttons slot="end">
+            <ion-button (click)="addToEklediklerim(ders)">
+              <ion-icon name="bookmark"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <p name="word"><b>Word : {{ders.ingilizceKelime}}</b></p>
+
+          <p><b>Anlamı : {{ders.turkceKarsiligi}}</b></p>
+          <p><b>Sample sentence:</b> {{ders.ornekCumle}}</p>
+          <p><b>Anlamı:</b> {{ders.baslamaZamani}}</p>
+        </ion-card-content>
+      </ion-card>
+      <ion-button (click)="goToEklediklerimPage(ders)">Eklediklerim</ion-button>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>

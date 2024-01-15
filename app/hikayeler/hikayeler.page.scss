@@ -1,0 +1,24 @@
+ion-header {
+    background-color: #3498db; // Header arka plan rengi
+  }
+  
+  ion-title {
+    color: #f5ac0e; // Başlık rengi
+  }
+  
+  ion-card {
+    margin: 20px; // Kartın kenar boşluğu
+  }
+  
+  ion-card-title {
+    font-size: 1.5em; // Kart başlık font boyutu
+  }
+  
+  ion-card-content {
+    color: #333; // Kart içerik rengi
+  }
+  ion-button {
+    font: 2em sans-serif;
+    color: #000;
+    border-radius: 50%;
+  }

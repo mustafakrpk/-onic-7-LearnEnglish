@@ -1,0 +1,35 @@
+// eklediklerim.page.scss
+
+ion-header {
+    --ion-background-color: #f5f5f5; // Başlık arka plan rengi
+    color: #fff; // Başlık metni rengi
+  }
+  
+  ion-title {
+    font-size: 1.5rem; // Başlık metni boyutu
+  }
+  
+  ion-content {
+    --ion-background-color: #031A3D; // Sayfa arka plan rengi
+  }
+  
+  ion-list {
+    margin: 10px; // Liste içindeki kartların kenar boşluğu
+  }
+  
+  ion-item {
+    background-color: #fff; // Kart arka plan rengi
+    border-radius: 10px; // Kart köşe yuvarlama
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); // Kart gölge efekti
+  }
+  
+  ion-card {
+    border: none;
+    background-color: #A4836D; // Kart sınırlarını kaldır
+  }
+  
+  ion-card-content {
+    color: #f7e6da; // Kart içeriği metni rengi
+  }
+  
+  
